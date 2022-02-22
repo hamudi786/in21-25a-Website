@@ -1,0 +1,135 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+/* font-family: 'Fira Code', monospace; */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Roboto:wght@300&display=swap');
+/* font-family: 'Fira Code', monospace;
+font-family: 'Roboto', sans-serif; */
+
+:root {    
+    --standartpadding: 15px;
+    --standartmargin: 15px;
+
+    --colo_Spanish_Gray: #999999;
+    --color_Sonic_Silver: #777777;
+    --color_Davys_Grey:  #555555;
+    --color_Dark_Charcoal: #333333;
+    --color_Chinese_Black: #111111;
+    --color_Midnight_Blue: #41729F;
+    --color_Blue_Gray: #5885af;
+    --color_Dark_Blue: #274472;
+    --colo_Baby_Blue: #c3E0E5;
+}
+
+/* CSS Reset */
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    font-size: 100%;
+}
+
+
+/* Layout Website */
+
+#grid_layouthome {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 1fr 8fr 2fr;
+    grid-template-areas: 
+    'emotion'
+    'nav'
+    'main'
+    'footer';
+}
+
+.emotion {
+    grid-area: emotion;
+}
+
+nav {
+    background-color: var(--color_Chinese_Black);
+    grid-area: nav;
+}
+
+main {
+    background-color: var(--color_Dark_Charcoal);
+    grid-area: main;
+}
+
+footer {
+    background-color: var(--color_Chinese_Black);
+    grid-area: footer;
+}
+
+/* emotion */
+
+.emotion {
+    background-image: url(../images/homeimg.jpg);
+    
+	background-repeat: no-repeat; 
+}
+
+/* navigation */
+
+
+.flexcontainer_nav {
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+}
+
+.flexitem {
+    font-family: 'Fira Code', monospace; 
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    padding: var(--standartpadding);
+    font-size: 17px;
+}
+
+.iconprog {
+    font-size: 50px;
+    font-family: 'Fira Code', monospace; 
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    padding: var(--standartpadding);
+    font-size: 50px;
+}
+
+.iconprog p {
+    font-family: 'Fira Code', monospace; 
+    display: inline;
+}
+
+
+
+
+.flexitem:hover {
+    background-color: var(--color_Midnight_Blue);
+    border-radius: 30px;
+}
+
+.active {
+    background-color: var(--color_Midnight_Blue);
+    border-radius: 30px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .iconprog p {
+        display: none;
+    }
+} 
+    
