@@ -87,6 +87,8 @@ footer {
     justify-content: space-around;
     position: sticky;
     top: 0;
+    -webkit-box-shadow: 0px 10px 28px -8px rgba(0,0,0,0.91); 
+box-shadow: 0px 10px 28px -8px rgba(0,0,0,0.91);
 }
 
 .flexitem {
@@ -99,18 +101,21 @@ footer {
 }
 
 .iconprog {
-    font-size: 50px;
+    font-size: 40px;
     font-family: 'Fira Code', monospace; 
     text-decoration: none;
     text-align: center;
-    margin: auto;
+    margin: 0 10px;
     padding: var(--standartpadding);
     font-size: 50px;
+    display: flex;
 }
 
 .iconprog p {
     font-family: 'Fira Code', monospace; 
     display: inline;
+    padding-left: var(--standartpadding);
+    border: 30px;
 }
 
 
@@ -125,6 +130,9 @@ footer {
     background-color: var(--color_Midnight_Blue);
     border-radius: 30px;
 }
+
+
+  
 
 
 @media screen and (max-width: 900px) {
