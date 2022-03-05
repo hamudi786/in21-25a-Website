@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="stylesheet/login.css" />
+  </head>
+  <body>
+    <section class="login flexitem_login">
+      <section class="iconprog">
+        <a id="logo" href="index.html"
+          ><i
+            title="go back to home"
+            class="fa fa-file-code-o"
+            aria-hidden="true"
+            ><p> in21-25a.ch</p></i
+          ></a
+        >
+        <div><i class="fa fa-user-o" aria-hidden="true"></i></div>
+      </section>
+      <section class="format_loginform">
+        <form class="loginform">
+          <h1>Anmelden</h1>
+          <p>Dieser Bereich ist nur für die Schüler von in21-25a</p>
+
+          <div class="login_element username">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" placeholder="username*" value="" />
+          </div>
+
+          <div class="login_element password">
+            <i class="fa fa-lock password_lock" aria-hidden="true"></i>
+            <input type="password"
+              placeholder="password*"
+              class="inputpassword"
+            />
+            <i
+              class="fa fa-eye"
+              id="show"
+              aria-hidden="true"
+              onclick="pwdvison()"
+            ></i>
+            <i
+              class="fa fa-eye-slash"
+              id="hide"
+              aria-hidden="true"
+              onclick="pwdvison()"
+            ></i>
+          </div>
+
+          <script type="text/javascript">
+            function pwdvison() {
+              var x = document.getElementsByClassName("inputpassword");
+              if (x.type === "password") {
+                x.type = "text";
+                document.getElementById("hide").style.display = "inline-block";
+                document.getElementById("show").style.display = "none";
+              } else {
+                x.type = "password";
+                document.getElementById("hide").style.display = "none";
+                document.getElementById("show").style.display = "inline-block";
+              }
+            }
+          </script>
+
+          <div class="flexcontainer_buttons">
+            <input class="button buttonlogin" type="button" value="Login" />
+            <input
+              class="button buttonforgotpwd"
+              type="button"
+              value="I forgot my password"
+            />
+          </div>
+        </form>
+      </section>
+    </section>
+    <aside class="emotion flexitem_emotion"></aside>
+
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <script>
+      window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader-wrapper");
+        loader.className += " hidden";
+      });
+    </script>
+  </body>
+</html>

@@ -8,8 +8,8 @@
 font-family: 'Roboto', sans-serif; */
 
 :root {    
-    --standartpadding: 15px;
-    --standartmargin: 15px;
+    --standardpadding: 15px;
+    --standardmargin: 15px;
 
     --colo_Spanish_Gray: #999999;
     --color_Sonic_Silver: #777777;
@@ -31,11 +31,13 @@ font-family: 'Roboto', sans-serif; */
     box-sizing: border-box;
     color: rgb(255, 255, 255);
     font-family: 'Poppins', sans-serif;
+    line-height: 1.15;
 }
 
 body {
     height: 100vh;
     font-size: 100%;
+    width: 100vw;
 }
 
 
@@ -64,6 +66,7 @@ nav {
 main {
     background-color: var(--color_Dark_Charcoal);
     grid-area: main;
+
 }
 
 footer {
@@ -87,6 +90,9 @@ footer {
     justify-content: space-around;
     position: sticky;
     top: 0;
+    padding-right: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
     -webkit-box-shadow: 0px 10px 28px -8px rgba(0,0,0,0.91); 
 box-shadow: 0px 10px 28px -8px rgba(0,0,0,0.91);
 }
@@ -96,26 +102,37 @@ box-shadow: 0px 10px 28px -8px rgba(0,0,0,0.91);
     text-decoration: none;
     text-align: center;
     margin: auto;
-    padding: var(--standartpadding);
-    font-size: 17px;
+    margin-right: 1px;
+    padding: var(--standardpadding);
+    font-size: 14.29px;
+    white-space: nowrap;
+}
+
+.ueber_uns, .home, .projekte, .kontakt{
+    flex-basis: 8%;
+    
+}
+
+.login {
+    font-size: 14px;
 }
 
 .iconprog {
-    font-size: 40px;
     font-family: 'Fira Code', monospace; 
     text-decoration: none;
     text-align: center;
-    margin: 0 10px;
-    padding: var(--standartpadding);
-    font-size: 50px;
+    margin: auto 6px;
+    padding: var(--standardpadding);
+    font-size: 38px;
     display: flex;
 }
 
 .iconprog p {
     font-family: 'Fira Code', monospace; 
     display: inline;
-    padding-left: var(--standartpadding);
-    border: 30px;
+    padding-left: var(--standardpadding);
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -132,12 +149,213 @@ box-shadow: 0px 10px 28px -8px rgba(0,0,0,0.91);
 }
 
 
+
+/* Animations */
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    }
+    @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+} 
+
+
+/* Loading Website */
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color_Chinese_Black);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-wrapper.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    } 
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #Fff;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
   
+  25% {
+    transform: rotate(180deg);
+  }
+  
+  50% {
+    transform: rotate(180deg);
+  }
+  
+  75% {
+    transform: rotate(360deg);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+  
+  25% {
+    height: 0%;
+  }
+  
+  50% {
+    height: 100%;
+  }
+  
+  75% {
+    height: 100%;
+  }
+  
+  100% {
+    height: 0%;
+  }
+}
+
+
 
 
 @media screen and (max-width: 900px) {
-    .iconprog p {
+    .iconprog p{
         display: none;
+        animation: fade in;
+        animation-duration: 2s;
+        
     }
-} 
+
+    
+    
+
+    
+    
+    
+    
+
+}
+
+
+@media screen and (max-width: 390px) {
+
+
+    .iconprog {
+        display: none;
+        animation: fade in;
+        animation-duration: 2s;
+    }
+
+    
+
+    /* Layout Website */
+
+#grid_layouthome {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 2fr 8fr 2fr;
+    grid-template-areas: 
+    'emotion'
+    'nav'
+    'main'
+    'footer';
+}
+
+.emotion {
+    grid-area: emotion;
+}
+
+nav {
+    background-color: var(--color_Chinese_Black);
+    grid-area: nav;
+}
+
+main {
+    background-color: var(--color_Dark_Charcoal);
+    grid-area: main;
+
+}
+
+footer {
+    background-color: var(--color_Chinese_Black);
+    grid-area: footer;
+}
+
+    /* navigation */
+
+
+    .flexcontainer_nav {
+        
+        padding-right: 10px;
+        padding-left: 10px;
+        
+    }
+
+    .flexitem {
+        font-family: 'Fira Code', monospace; 
+        text-decoration: none;
+        text-align: center;
+        margin: auto;
+        margin-right: 1px;
+        padding: var(--standardpadding);
+        font-size: 12px;
+        white-space: nowrap;
+    }
+    
+
+    
+    .login {
+        font-size: 14px;
+    }
+    
+
+}
+    
+
+
+
+    
+
     

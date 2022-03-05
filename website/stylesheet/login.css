@@ -1,0 +1,376 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap");
+/* font-family: 'Fira Code', monospace; */
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&family=Roboto:wght@300&display=swap");
+/* font-family: 'Roboto', sans-serif; */
+
+:root {
+  --standardpadding: 15px;
+  --standardmargin: 15px;
+
+  --colo_Spanish_Gray: #999999;
+  --color_Sonic_Silver: #777777;
+  --color_Davys_Grey: #555555;
+  --color_Dark_Charcoal: #333333;
+  --color_Chinese_Black: #111111;
+  --color_Midnight_Blue: #41729f;
+  --color_Blue_Gray: #5885af;
+  --color_Dark_Blue: #274472;
+  --colo_Baby_Blue: #c3e0e5;
+}
+
+/* CSS Reset */
+
+* {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Poppins", sans-serif;
+  line-height: 1.15;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  font-size: 100%;
+  color: white;
+}
+
+/* Stndardconfig */
+
+h1 {
+  font-size: 35px;
+}
+
+h1,
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Struktur der Website */
+
+.flexitem_login {
+  width: 50vw;
+  height: 100vh;
+  background-color: black;
+}
+.flexitem_emotion {
+  flex: 1;
+}
+
+/* login */
+
+.login {
+  padding: 50px 120px;
+}
+
+.iconprog {
+  font-family: "Fira Code", monospace;
+  text-decoration: none;
+  text-align: center;
+  margin: auto 0;
+  font-size: 38px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Fira Code", monospace;
+  align-items: center;
+}
+
+.iconprog div {
+  background-color: var(--color_Midnight_Blue);
+  border-radius: 30px;
+  padding: 10px !important;
+  margin: var(--standardmargin);
+  flex-basis: 5%;
+}
+
+.iconprog p,
+.iconprog div {
+  font-family: "Fira Code", monospace;
+  font-size: 35px;
+  text-decoration: none;
+  font-weight: none;
+  display: inline;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.iconprog div a {
+  padding: 10px 5px;
+}
+
+a {
+  color: white;
+}
+
+#logo:hover {
+  background-color: var(--color_Midnight_Blue);
+  padding: 9px;
+  margin-left: -9px;
+  border-radius: 30px;
+}
+
+.goback:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background: var(--color_Midnight_Blue);
+  top: -5px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+}
+
+.format_loginform {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 65%;
+}
+
+.loginform {
+  width: 100%;
+}
+
+/* Login-Inputbereiech */
+
+.login h1,
+.login p {
+  margin-top: 20px;
+}
+
+.loginform p {
+  font-weight: bold;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.login_element {
+  margin-bottom: 25px;
+  text-align: left;
+  border-bottom: 2px solid white;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.login_element input {
+  font-family: "Fira Code", monospace;
+  border: none;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0);
+  width: 90%;
+  font-size: 15px;
+  color: white;
+}
+
+.login_element input:focus {
+  color: white;
+  outline: none;
+}
+
+.login_element i {
+  font-size: 22px;
+  color: rgb(255, 255, 255);
+  margin: 0 6px;
+}
+
+.fa-eye,
+.fa-eye-slash {
+  margin-left: 0;
+}
+
+.fa-eye-slash {
+  display: none;
+}
+
+.fa-eye-slash:hover {
+  color: var(--color_Midnight_Blue);
+}
+
+.fa-eye:hover {
+  color: var(--color_Midnight_Blue);
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.726);
+}
+
+.flexcontainer_buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  font-family: "Fira Code", monospace;
+  padding: var(--standardpadding);
+  color: white;
+  border-radius: 30px;
+  border-style: none;
+  background-color: var(--color_Dark_Charcoal);
+  border: 3px #ffffff00 solid;
+  cursor: pointer;
+}
+
+.button:hover {
+  border-style: solid;
+  border-color: #41729f;
+}
+
+/* emotion */
+
+.emotion {
+  background-image: url("../gifs/wasser.gif");
+  width: 50vw;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Loading Website */
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color_Chinese_Black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-wrapper.hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border: 4px solid #fff;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner {
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: #fff;
+  animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-inner {
+  0% {
+    height: 0%;
+  }
+
+  25% {
+    height: 0%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .emotion {
+    display: none;
+    flex: 0;
+  }
+
+  .flexitem_login {
+    flex: 1;
+  }
+
+  .login {
+    padding: 50px 50px;
+  }
+
+  .iconprog {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .emotion {
+    display: none;
+    flex: 0;
+  }
+
+  .flexitem_login {
+    flex: 1;
+  }
+
+  .iconprog a i p {
+    display: none;
+  }
+
+  .iconprog a {
+    font-size: 60px;
+  }
+
+  .flexcontainer_buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    font-family: "Fira Code", monospace;
+    padding: var(--standardpadding);
+    color: white;
+    border-radius: 30px;
+    border-style: none;
+    background-color: var(--color_Dark_Charcoal);
+    border: 3px #ffffff00 solid;
+    cursor: pointer;
+    flex-basis: 100%;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

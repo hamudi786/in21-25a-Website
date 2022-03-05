@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://schul-net.ch/notenrechner/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Notenrechner</title>
+	
+</head>
+<body>
+
+	<h2 class="page_title">Notenrechner</h2>
+	<div id="wrapper">
+		<div><input type="text" class="note"> <input type="text" value="100" class="wertung">%</div>
+		<div><input type="text" class="note"> <input type="text" value="100" class="wertung">%</div>
+		<div><input type="text" class="note"> <input type="text" value="100" class="wertung">%</div>
+		<div><input type="text" class="note"> <input type="text" value="100" class="wertung">%</div>
+		<div><input type="text" class="note"> <input type="text" value="100" class="wertung">%</div>
+		<div><input type="text" class="note"> <input type="text" value="100" class="wertung">%</div>
+		<div><input type="text" class="note"> <input type="text" value="100" class="wertung">%</div>
+		<div><input type="text" class="note"> <input type="text" value="100" class="wertung">%</div>
+		<div><input type="text" class="note"> <input type="text" value="100" class="wertung">%</div>
+		<div><input type="text" class="note"> <input type="text" value="100" class="wertung">%</div>
+		
+		<span id="result">
+			Durchschnitt: <span id="durchschnitt"></span>
+		</span>
+	</div>
+	<script>
+		var calc = function(){
+			var summe = 0;
+			var gewichtungen = 0;
+			
+			var divs = document.getElementById('wrapper').getElementsByTagName('div');
+			
+			for(var i = 0, len = divs.length; i < len; i++){
+				var div = divs[i];
+				
+				var note = +div.getElementsByClassName('note')[0].value;
+				var wertung = +div.getElementsByClassName('wertung')[0].value;
+				
+				if(note < 0 || note > 6){
+					div.getElementsByClassName('note')[0].style.borderColor = "red";
+				}
+				else {
+					div.getElementsByClassName('note')[0].style.borderColor = "grey";
+				}						
+				
+				if(note != ''){
+					summe += note * wertung;
+					gewichtungen += wertung;
+				}
+			}					
+			
+			document.getElementById('durchschnitt').innerHTML = (summe / gewichtungen).toFixed(2); 
+		}
+		
+		var inputs = document.getElementById('wrapper').getElementsByTagName('input');
+		for(var i = 0, len = inputs.length; i < len; i++){
+			inputs[i].addEventListener('keyup', calc);
+			inputs[i].addEventListener('change', calc);
+		}
+		
+	</script>
+	<style>
+		#durchschnitt {
+			color: green;
+		}
+		
+		#wrapper div {
+			margin: 5px;
+		}
+		
+		input {
+			border-color: grey;
+			border-style: solid;
+			border-width: 1px;
+			padding: 5px;
+		}
+		
+		.wertung {
+			margin-right: 3px;
+		}
+		
+		#result {
+			margin: 5px;
+			border: 1px solid grey;
+			display: inline-block;
+			padding: 5px;
+		}
+	</style>
+
+</body></html>
