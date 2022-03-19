@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="de">
 <head>
     
     <title>IN21-25a.ch</title>
     <meta charset="utf-8" />
+    <title>Seitentitel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheet/stylehome.css"/>
-    <script src="https://kit.fontawesome.com/c68378da41.js" crossorigin="anonymous"></script>
 </head>
 <body id="grid_layouthome">
     <section class="emotion">
@@ -23,20 +21,10 @@
     </nav>
     <main>
 
-
+       
     </main>
     <footer>
-        <div class="flexbox-footer">
-            <h3>in21-25a.ch</h3>
-            <ul class="socials">
-                <li class="email" ><a href="contact.html"><i class="fa-solid fa-envelope"></i></a></li>
-                <li class="github" ><a href="https://github.com/hamudi786/in21-25a-Website" target="_blank" ><i class="fa-brands fa-github"></i></a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>Copyright 2022 | All rights reserved</p>
-            <p>Designed and created by <span>Jvan Kocherhans and Mohamed El Saidi</span></p>
-        </div>
+        <p>Footer</p>
     </footer>
 
  
