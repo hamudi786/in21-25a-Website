@@ -114,17 +114,6 @@ a {
   border-radius: 30px;
 }
 
-.goback:before {
-  position: absolute;
-  content: "";
-  height: 15px;
-  width: 15px;
-  background: var(--color_Midnight_Blue);
-  top: -5px;
-  left: 50%;
-  transform: translate(-50%) rotate(45deg);
-}
-
 .format_loginform {
   display: flex;
   width: 100%;
@@ -155,6 +144,7 @@ a {
   border-bottom: 2px solid white;
   white-space: nowrap;
   width: 100%;
+  position: relative;
 }
 
 .login_element input {
@@ -181,6 +171,9 @@ a {
 .fa-eye,
 .fa-eye-slash {
   margin-left: 0;
+  position: absolute;
+  right: 0px;
+  top: 5px;
 }
 
 .fa-eye-slash {
@@ -360,6 +353,7 @@ a {
     flex-wrap: wrap;
   }
 
+
   .button {
     font-family: "Fira Code", monospace;
     padding: var(--standardpadding);
@@ -373,4 +367,5 @@ a {
     width: 100%;
     margin-bottom: 20px;
   }
+
 }
