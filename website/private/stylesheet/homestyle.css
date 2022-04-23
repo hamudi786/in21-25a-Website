@@ -131,6 +131,7 @@ nav ul li .tooltip{
     pointer-events: none;
 }
 
+
 nav.active ul li .tooltip{
     display: block;
 }
@@ -186,4 +187,6 @@ main .text{
     margin: 12px;
     
 }
+
+
 
